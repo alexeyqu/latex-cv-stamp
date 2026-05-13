@@ -30,7 +30,7 @@ All three packages used below (`textpos`, `xcolor`, `hyperref`) are included in 
 **Step 1** — add to your preamble:
 
 ```latex
-\usepackage[absolute]{textpos}
+\usepackage[absolute,overlay]{textpos}
 \usepackage{xcolor}
 \usepackage{hyperref}
 
@@ -71,6 +71,8 @@ See [`example.tex`](example.tex) for a complete minimal document.
 
 The [`textpos`](https://ctan.org/pkg/textpos) package places an absolutely-positioned block outside the normal text flow. The coordinates `(150, 0)` are in mm (set by the `\TPHorizModule`/`\TPVertModule` lengths), measured from the `\textblockorigin`. `\today` expands to the compile date at build time, so the stamp is always accurate without any manual updates.
 
-`(150, 0)` works for A4 with standard margins; tweak the x-coordinate for Letter or different margin settings. Adjust `\textblockorigin` to control the vertical offset from the top of the page.
+`(150, 0)` works for A4 with standard margins. For US Letter (215.9 mm wide), use `(148, 0)`. Adjust `\textblockorigin` to control the vertical offset from the top of the page.
+
+> **Multi-page CVs:** `\lastupdated` called once stamps only page 1. To stamp every page, call it inside `\AtBeginShipout{\lastupdated}` (requires the `atbegshi` package).
 
 > **Note:** `\today` format depends on your engine and locale (e.g. "May 13, 2026" vs "13 May 2026"). Use the [`datetime2`](https://ctan.org/pkg/datetime2) package if you need a consistent format across engines.
