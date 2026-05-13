@@ -2,6 +2,8 @@
 
 Auto-stamp your LaTeX CV with a render date and a link to the latest version. One command, zero maintenance.
 
+<img width="987" height="195" alt="image" src="https://github.com/user-attachments/assets/f333e068-943e-4bc5-ba29-d806ed6fdc6e" />
+
 ---
 
 ## The problem
